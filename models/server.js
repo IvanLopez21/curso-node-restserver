@@ -10,6 +10,8 @@ class Server {
       this.app = express();
       this.port = process.env.PORT
       this.usuariosPath = '/api/usuarios';
+      this.esp32Path = '/api/esp32';
+      this.climaPath = '/api/clima';
 
       // Conectar a base de datos
       this.conectarDb();
@@ -36,6 +38,8 @@ class Server {
 
     routes() {
       this.app.use(this.usuariosPath,require('../routes/usuarios.routes'))
+      this.app.use(this.esp32Path,require('../routes/esp32.routes'))
+      this.app.use(this.climaPath,require('../routes/clima.routes'))
     }
 
     listen() {
