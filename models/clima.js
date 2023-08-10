@@ -8,7 +8,7 @@ const ClimaSchema = Schema({
     type: String
   },
   estado:{
-    type: String
+    type: Boolean
   }
 
 });

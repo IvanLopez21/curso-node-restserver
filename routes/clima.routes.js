@@ -11,7 +11,7 @@ router.get('/', climaGet);
 
 router.post('/', [
   check('climas','Climas es obligatorio').not().isEmpty(),
-  check('estado','estado es obligatorio').not().isEmpty()
+  check('estado','Estado es obligatorio y es boolean').isBoolean()
 ] ,climaPost);
 
 module.exports = router;
